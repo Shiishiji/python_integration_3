@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<interface>
+    <object class="GtkApplicationWindow" id="main_window">
+        <property name="title">Integracja systemów - program testowy - Damian Szopiński</property>
+        <property name="default-width">1000</property>
+        <property name="default-height">600</property>
+
+        <child>
+            <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="spacing">5</property>
+
+                <child>
+                    <object class="GtkFrame">
+                        <child>
+                            <object class="GtkBox">
+                                <property name="orientation">vertical</property>
+                                <child>
+                                    <object class="GtkLabel">
+                                        <property name="label">Producent</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkEntry" id="entry_manufacturer"/>
+                                </child>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+
+                <child>
+                    <object class="GtkFrame">
+                        <child>
+                            <object class="GtkBox">
+                                <property name="orientation">vertical</property>
+                                <child>
+                                    <object class="GtkLabel">
+                                        <property name="label">Rozmiar ekranu</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkEntry" id="entry_screen_size"/>
+                                </child>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+
+                <child>
+                    <object class="GtkFrame">
+                        <child>
+                            <object class="GtkBox">
+                                <property name="orientation">vertical</property>
+                                <child>
+                                    <object class="GtkLabel">
+                                        <property name="label">Rozdzielczość</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkEntry" id="entry_screen_resolution"/>
+                                </child>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+
+                <child>
+                    <object class="GtkButton" id="button_begin_test">
+                        <property name="label">Rozpocznij test</property>
+                    </object>
+                </child>
+            </object>
+        </child>
+
+    </object>
+</interface>
