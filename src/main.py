@@ -2,6 +2,7 @@ import pyautogui
 import gi
 
 from scenarios.scenario_one import ScenarioOneData, run_scenario_one
+from scenarios.scenario_two import ScenarioTwoData, run_scenario_two
 
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
@@ -23,8 +24,10 @@ class MyApp(Adw.Application):
         builder = Gtk.Builder()
         builder.add_from_file("resources/window.ui")
 
-        button = builder.get_object("button_begin_test")
-        button.connect("clicked", self.begin_test)
+        button = builder.get_object("button_begin_test_1")
+        button.connect("clicked", self.begin_test_1)
+        button = builder.get_object("button_begin_test_2")
+        button.connect("clicked", self.begin_test_2)
 
         self.entry_manufacturer = builder.get_object("entry_manufacturer")
         self.entry_screen_size = builder.get_object("entry_screen_size")
@@ -34,7 +37,7 @@ class MyApp(Adw.Application):
         self.win.set_application(self)
         self.win.present()
 
-    def begin_test(self, _button):
+    def begin_test_1(self, _button):
         print("tests firing")
 
         data: ScenarioOneData = ScenarioOneData(
@@ -45,6 +48,18 @@ class MyApp(Adw.Application):
 
         if data.is_valid():
             run_scenario_one(data)
+        else:
+            print("Invalid data")
+
+    def begin_test_2(self, _button):
+        print("tests firing")
+
+        data: ScenarioTwoData = ScenarioTwoData(
+            self.entry_manufacturer.get_text(),
+        )
+
+        if data.is_valid():
+            run_scenario_two(data)
         else:
             print("Invalid data")
 

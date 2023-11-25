@@ -65,8 +65,13 @@
                 </child>
 
                 <child>
-                    <object class="GtkButton" id="button_begin_test">
+                    <object class="GtkButton" id="button_begin_test_1">
                         <property name="label">Rozpocznij test 1</property>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkButton" id="button_begin_test_2">
+                        <property name="label">Rozpocznij test 2</property>
                     </object>
                 </child>
             </object>
