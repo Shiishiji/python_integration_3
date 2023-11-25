@@ -66,17 +66,17 @@
 
                 <child>
                     <object class="GtkButton" id="button_begin_test_1">
-                        <property name="label">Rozpocznij test 1</property>
+                        <property name="label">Rozpocznij test 1 - aplikacja serwerowa</property>
                     </object>
                 </child>
                 <child>
                     <object class="GtkButton" id="button_begin_test_2">
-                        <property name="label">Rozpocznij test 2</property>
+                        <property name="label">Rozpocznij test 2 - aplikacja kliencka liczba laptopów</property>
                     </object>
                 </child>
                 <child>
                     <object class="GtkButton" id="button_begin_test_3">
-                        <property name="label">Rozpocznij test 3</property>
+                        <property name="label">Rozpocznij test 3 - aplikacja kliencka export laptopów</property>
                     </object>
                 </child>
             </object>
