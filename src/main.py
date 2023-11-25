@@ -2,6 +2,7 @@ import pyautogui
 import gi
 
 from scenarios.scenario_one import ScenarioOneData, run_scenario_one
+from scenarios.scenario_three import ScenarioThreeData, run_scenario_three
 from scenarios.scenario_two import ScenarioTwoData, run_scenario_two
 
 gi.require_version('Gtk', '4.0')
@@ -28,6 +29,8 @@ class MyApp(Adw.Application):
         button.connect("clicked", self.begin_test_1)
         button = builder.get_object("button_begin_test_2")
         button.connect("clicked", self.begin_test_2)
+        button = builder.get_object("button_begin_test_3")
+        button.connect("clicked", self.begin_test_3)
 
         self.entry_manufacturer = builder.get_object("entry_manufacturer")
         self.entry_screen_size = builder.get_object("entry_screen_size")
@@ -60,6 +63,20 @@ class MyApp(Adw.Application):
 
         if data.is_valid():
             run_scenario_two(data)
+        else:
+            print("Invalid data")
+
+    def begin_test_3(self, _button):
+        print("tests firing")
+
+        data: ScenarioThreeData = ScenarioThreeData(
+            self.entry_manufacturer.get_text(),
+            self.entry_screen_size.get_text(),
+            self.entry_screen_resolution.get_text(),
+        )
+
+        if data.is_valid():
+            run_scenario_three(data)
         else:
             print("Invalid data")
 
